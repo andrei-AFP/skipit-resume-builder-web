@@ -4,7 +4,6 @@ import { observer } from 'mobx-react-lite';
 import { useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import userStore from '@/stores/userStore';
-import SkillButtons from '@/internal/SkillButtons';
 import Image from 'next/image';
 import { calculatePeriod } from '@/lib/helpers';
 import Experiences from '@/internal/Experiences';
@@ -50,8 +49,7 @@ const UserPage = observer(() => {
         </div>
         <>
           <h2 className="text-2xl font-bold my-4">Skills</h2>
-          <div className="flex flex-wrap justify-center gap-3 lg:justify-end">
-            <SkillButtons skills={userStore.user.skills} />
+          <div className="flex flex-wrap justify-center gap-3 w-full">
             <SkillsTabs skills={userStore.user.skills} />
           </div>
         </>

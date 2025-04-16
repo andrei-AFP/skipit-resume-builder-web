@@ -5,6 +5,9 @@ const colorMap: Record<string, string> = {
   green: 'bg-green-500/30 text-green-500',
   yellow: 'bg-yellow-500/30 text-yellow-500',
   gray: 'bg-gray-500/30 text-gray-500',
+  purple: 'bg-purple-500/30 text-purple-500',
+  teal: 'bg-teal-500/30 text-teal-500',
+  emerald: 'bg-emerald-500/30 text-emerald-500',
 };
 
 export default colorMap;

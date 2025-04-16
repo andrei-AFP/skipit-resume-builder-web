@@ -20,15 +20,23 @@ const Experiences = observer((props: IExperiencesProps) => {
           <h3 className="text-lg font-medium">{experience.company}</h3>
           <h3 className="text-md font-medium">{experience.position}</h3>
           <p className="text-sm">
-            <span className="me-1">{dayjs(experience.start_date).format('MMM/YYYY')}</span>
-            -
-            <span className="mx-1">{!!experience.end_date ? dayjs(experience.end_date).format('MMM/YYYY') : 'Present'}</span>
-            {!!experience.start_date && <span>({calculatePeriod(experience.start_date as Date, !!experience.end_date ? experience.end_date as Date : new Date())})</span>}
+            <span className="me-1">{dayjs(experience.start_date).format('MMM/YYYY')}</span>-
+            <span className="mx-1">
+              {!!experience.end_date ? dayjs(experience.end_date).format('MMM/YYYY') : 'Present'}
+            </span>
+            {!!experience.start_date && (
+              <span>
+                (
+                {calculatePeriod(
+                  experience.start_date as Date,
+                  !!experience.end_date ? (experience.end_date as Date) : new Date()
+                )}
+                )
+              </span>
+            )}
           </p>
-          <p className="text-sm mb-4">
-            {experience.location}
-          </p>
-          <div className="flex flex-wrap gap-3">
+          <p className="text-sm mb-4">{experience.location}</p>
+          <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
             <SkillButtons skills={experience.skills} hideIcons={true} />
           </div>
         </div>

@@ -14,6 +14,7 @@ class UserStore {
     this.loading = true;
     try {
       const response = await api.get<IUser>(`/users/${userId}`);
+
       runInAction(() => {
         this.user = response.data;
       });

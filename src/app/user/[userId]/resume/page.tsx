@@ -4,11 +4,10 @@ import { observer } from 'mobx-react-lite';
 import { useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import userStore from '@/stores/userStore';
-import Image from 'next/image';
-import { calculatePeriod } from '@/lib/helpers';
 import Experiences from '@/internal/Experiences';
 import Loading from '@/internal/Loading';
 import SkillsTabs from '@/internal/SkillTabs';
+import Summary from '@/internal/Summary';
 
 const UserPage = observer(() => {
   const params = useParams();
@@ -19,37 +18,13 @@ const UserPage = observer(() => {
 
   if (userStore.loading) return <Loading />;
 
-  // const test = Object.keys(userStore.user.skills_by_type);
-
   return userStore.user ? (
     <>
       <div className="h-full mb-10 text-center lg:sticky lg:top-20 lg:w-[50%] lg:pe-8 lg:flex lg:flex-col lg:items-end lg:text-end">
-        <div className="mb-4 mx-auto relative w-[150px] h-[150px] overflow-hidden rounded-full border-4 border-black bg-[#1a1a1a] lg:mx-0">
-          <Image
-            src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${userStore.user.avatar}`}
-            alt="Avatar"
-            width="150"
-            height="150"
-          />
-        </div>
-        <h1 className="text-3xl font-bold">{userStore.user.name}</h1>
-        {userStore.user.birthday && (
-          <p>
-            Age: {calculatePeriod(new Date(userStore.user.birthday as string), new Date(), true)}
-          </p>
-        )}
-        <div className="mt-4">
-          <p>{userStore.user.location}</p>
-          <p>
-            <a href={`mailto:${userStore.user.email}`} className="text-decoration-none">
-              {userStore.user.email}
-            </a>
-          </p>
-          <p>{userStore.user.phone_number}</p>
-        </div>
+        <Summary />
         <>
           <h2 className="text-2xl font-bold my-4">Skills</h2>
-          <div className="flex flex-wrap justify-center gap-3 w-full">
+          <div className="flex flex-wrap justify-center gap-3 w-full lg:justify-end">
             <SkillsTabs skills={userStore.user.skills} />
           </div>
         </>

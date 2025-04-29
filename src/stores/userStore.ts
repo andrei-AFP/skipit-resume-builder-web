@@ -10,7 +10,7 @@ class UserStore {
     makeAutoObservable(this);
   }
 
-  async fetchUser(userId: string | undefined) {
+  async fetchUser(userId: string) {
     this.loading = true;
     try {
       const response = await api.get<IUser>(`/users/${userId}`);
@@ -27,7 +27,7 @@ class UserStore {
     }
   }
 
-  async fetchUserByUsername(username: string | undefined) {
+  async fetchUserByUsername(username: string) {
     this.loading = true;
     try {
       const response = await api.get<IUser>(`/user/${username}`);

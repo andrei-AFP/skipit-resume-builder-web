@@ -3,7 +3,7 @@
 import { observer } from 'mobx-react-lite';
 import colorMap from '@/lib/colorMap';
 // import * as Icons from '@icons-pack/react-simple-icons';
-import SkillIcon from '@/internal/SkillIcon';
+import SkillIcon from '@/components/SkillIcon';
 import { ISkill } from '@/interfaces/ISkill';
 
 interface ISkillButtonsProps {

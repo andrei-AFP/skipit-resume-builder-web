@@ -26,6 +26,23 @@ class UserStore {
       });
     }
   }
+
+  async fetchUserByUsername(username: string | undefined) {
+    this.loading = true;
+    try {
+      const response = await api.get<IUser>(`/user/${username}`);
+
+      runInAction(() => {
+        this.user = response.data;
+      });
+    } catch (error) {
+      console.error('Error fetching user:', error);
+    } finally {
+      runInAction(() => {
+        this.loading = false;
+      });
+    }
+  }
 }
 
 const userStore = new UserStore();

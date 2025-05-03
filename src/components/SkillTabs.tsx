@@ -14,7 +14,7 @@ const SkillsTabs = observer((props: ISkillsTabsProps) => {
   const [activeTab, setActiveTab] = useState('All');
 
   const { groupedSkills, skillTypes } = useMemo(() => {
-    let grouped: Record<string, ISkill[]> = {};
+    let grouped: Record<string, [ISkill]> = {};
     if (props.skills) {
       grouped = props.skills.reduce(
         (acc, skill) => {

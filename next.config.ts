@@ -3,7 +3,16 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ['localhost', 'skipit.ro'],
+    domains: ['skipit.ro', 'localhost'],
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'skipit.ro',
+        port: '',
+        pathname: '/storage/**',
+      },
+    ],
+    unoptimized: true,
   },
 };
 

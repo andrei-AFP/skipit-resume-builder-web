@@ -8,7 +8,6 @@ import SummarySection from '@/containers/resume-page/SummarySection';
 import ExperiencesSection from '@/containers/resume-page/ExperiencesSection';
 
 const UserPage = observer(() => {
-
   useEffect(() => {
     userStore.fetchOwner();
   }, []);

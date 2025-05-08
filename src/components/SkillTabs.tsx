@@ -38,33 +38,34 @@ const SkillsTabs = observer((props: ISkillsTabsProps) => {
   }, [skillTypes, activeTab]);
 
   return (
-    props.skills &&
-    <>
-      <div className="flex overflow-x-auto no-scrollbar lg:justify-end">
-        <DraggableScroll>
-          {skillTypes.map((type) => (
-            <button
-              key={type}
-              onClick={() => setActiveTab(type)}
-              className={`px-4 py-2 text-sm font-medium whitespace-nowrap cursor-pointer ${
-                activeTab === type ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500'
-              }`}
-            >
-              {type}
-            </button>
-          ))}
-        </DraggableScroll>
-      </div>
-      <div className="py-4">
-        <ul className="flex flex-wrap gap-2 justify-center lg:justify-end">
-          {activeTab && activeTab === 'All' ? (
-            <SkillButtons skills={props.skills} />
-          ) : (
-            <SkillButtons skills={groupedSkills[activeTab]} />
-          )}
-        </ul>
-      </div>
-    </>
+    props.skills && (
+      <>
+        <div className="flex overflow-x-auto no-scrollbar lg:justify-end">
+          <DraggableScroll>
+            {skillTypes.map((type) => (
+              <button
+                key={type}
+                onClick={() => setActiveTab(type)}
+                className={`px-4 py-2 text-sm font-medium whitespace-nowrap cursor-pointer ${
+                  activeTab === type ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500'
+                }`}
+              >
+                {type}
+              </button>
+            ))}
+          </DraggableScroll>
+        </div>
+        <div className="py-4">
+          <ul className="flex flex-wrap gap-2 justify-center lg:justify-end">
+            {activeTab && activeTab === 'All' ? (
+              <SkillButtons skills={props.skills} />
+            ) : (
+              <SkillButtons skills={groupedSkills[activeTab]} />
+            )}
+          </ul>
+        </div>
+      </>
+    )
   );
 });
 

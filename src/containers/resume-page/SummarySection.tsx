@@ -1,8 +1,8 @@
 'use client';
 
-import SkillsTabs from "@/components/SkillTabs";
-import Summary from "@/components/Summary";
-import userStore from "@/stores/userStore";
+import SkillsTabs from '@/components/SkillTabs';
+import Summary from '@/components/Summary';
+import userStore from '@/stores/userStore';
 
 const SummarySection = () => {
   return (

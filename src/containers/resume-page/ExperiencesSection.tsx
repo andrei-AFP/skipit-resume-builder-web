@@ -1,7 +1,7 @@
 'use client';
 
-import Experiences from "@/components/Experiences";
-import userStore from "@/stores/userStore";
+import Experiences from '@/components/Experiences';
+import userStore from '@/stores/userStore';
 
 const ExperiencesSection = () => {
   return (

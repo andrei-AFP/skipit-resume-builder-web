@@ -24,9 +24,7 @@ const Summary = observer(({ user }: ISummaryProps) => {
       )}
       <h1 className="text-3xl font-bold">{user.name}</h1>
       {user.birthday && (
-        <p>
-          Age: {calculatePeriod(new Date(user.birthday as string), new Date(), true)}
-        </p>
+        <p>Age: {calculatePeriod(new Date(user.birthday as string), new Date(), true)}</p>
       )}
       <div className="mt-4">
         <p>{user.location}</p>

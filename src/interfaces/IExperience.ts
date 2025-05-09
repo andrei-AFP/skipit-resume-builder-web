@@ -9,5 +9,5 @@ export interface IExperience {
   start_date?: Date;
   end_date?: Date;
   description?: string;
-  skills?: [ISkill];
+  skills?: ISkill[];
 }

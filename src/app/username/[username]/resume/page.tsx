@@ -12,7 +12,7 @@ const UserPage = observer(() => {
   const params = useParams();
 
   useEffect(() => {
-    if (params.username) userStore.fetchUserByUsername(params.username as string);
+    if (params.username) userStore.fetch(`/user/${params.username}`);
   }, [params.username]);
 
   if (userStore.loading) return <Loading />;

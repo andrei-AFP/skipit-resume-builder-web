@@ -8,7 +8,7 @@ import dayjs from 'dayjs';
 import { calculatePeriod } from '@/lib/helpers';
 
 interface IExperiencesProps {
-  skills?: [ISkill];
+  skills?: ISkill[];
   experiences?: [IExperience];
 }
 

@@ -9,7 +9,7 @@ import ExperiencesSection from '@/containers/resume-page/ExperiencesSection';
 
 const UserPage = observer(() => {
   useEffect(() => {
-    userStore.fetchOwner();
+    userStore.fetch('/owner');
   }, []);
 
   if (userStore.loading) return <Loading />;

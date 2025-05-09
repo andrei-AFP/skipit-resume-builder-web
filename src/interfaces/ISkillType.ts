@@ -4,5 +4,5 @@ export interface ISkillType {
   id: number;
   name: string;
   color?: string;
-  skills?: [ISkill];
+  skills?: ISkill[];
 }

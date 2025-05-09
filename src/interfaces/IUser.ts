@@ -10,7 +10,7 @@ export interface IUser {
   location?: string;
   phone_number?: string;
   linkedin_url?: string;
-  skills?: [ISkill];
+  skills?: ISkill[];
   experiences?: [IExperience];
-  skills_by_type?: { string: [ISkill] };
+  skills_by_type?: { string: ISkill[] };
 }

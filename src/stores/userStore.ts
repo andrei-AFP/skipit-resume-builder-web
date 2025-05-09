@@ -1,6 +1,7 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import api from '@/lib/api';
 import { IUser } from '@/interfaces/IUser';
+import skillStore from './skillStore';
 
 class UserStore {
   user: IUser | null = null;
@@ -10,47 +11,14 @@ class UserStore {
     makeAutoObservable(this);
   }
 
-  async fetchUser(userId: string) {
+  async fetch(path: string) {
     this.loading = true;
     try {
-      const response = await api.get<IUser>(`/users/${userId}`);
+      const response = await api.get<IUser>(path);
 
       runInAction(() => {
         this.user = response.data;
-      });
-    } catch (error) {
-      console.error('Error fetching user:', error);
-    } finally {
-      runInAction(() => {
-        this.loading = false;
-      });
-    }
-  }
-
-  async fetchUserByUsername(username: string) {
-    this.loading = true;
-    try {
-      const response = await api.get<IUser>(`/user/${username}`);
-
-      runInAction(() => {
-        this.user = response.data;
-      });
-    } catch (error) {
-      console.error('Error fetching user:', error);
-    } finally {
-      runInAction(() => {
-        this.loading = false;
-      });
-    }
-  }
-
-  async fetchOwner() {
-    this.loading = true;
-    try {
-      const response = await api.get<IUser>('/owner');
-
-      runInAction(() => {
-        this.user = response.data;
+        if (this.user.skills) skillStore.setSkills(this.user.skills);
       });
     } catch (error) {
       console.error('Error fetching user:', error);

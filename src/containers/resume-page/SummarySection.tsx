@@ -1,7 +1,9 @@
 'use client';
 
-import SkillsTabs from '@/components/SkillTabs';
+import SkillButtons from '@/components/SkillButtons';
+import { SkillFilter } from '@/components/SkillFilters';
 import Summary from '@/components/Summary';
+import skillStore from '@/stores/skillStore';
 import userStore from '@/stores/userStore';
 
 const SummarySection = () => {
@@ -11,7 +13,12 @@ const SummarySection = () => {
       <>
         <h2 className="text-2xl font-bold my-4">Skills</h2>
         <div className="flex flex-wrap justify-center gap-3 w-full lg:justify-end">
-          <SkillsTabs skills={userStore.user?.skills} />
+          <SkillFilter />
+          <div className="py-4">
+            <ul className="flex flex-wrap gap-2 justify-center lg:justify-end">
+              <SkillButtons skills={skillStore.skills} />
+            </ul>
+          </div>
         </div>
       </>
     </div>

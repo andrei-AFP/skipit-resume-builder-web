@@ -19,7 +19,7 @@ const SkillButtons = observer((props: ISkillButtonsProps) => {
           key={skill.id}
           className={`
             ${colorMap[skill.skill_type.color as string]}
-            ${!!skillStore.selectedSkillTypes.size && !skillStore.selectedSkillTypes.has(skill.skill_type.id) && 'grayscale'}
+            ${!!skillStore.selectedSkillTypes.size && !skillStore.selectedSkillTypes.has(skill.skill_type.id) ? 'grayscale' : 'shadow-[0px_0px_20px_0px_rgba(0,_0,_0,_0.5)]'}
             group relative inline-flex items-center overflow-hidden rounded-full px-4 py-2 transition duration-300 cursor-pointer
             `}
         >

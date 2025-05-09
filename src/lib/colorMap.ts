@@ -8,6 +8,8 @@ const colorMap: Record<string, string> = {
   purple: 'bg-purple-500/30 text-purple-500',
   teal: 'bg-teal-500/30 text-teal-500',
   emerald: 'bg-emerald-500/30 text-emerald-500',
+  lime: 'bg-lime-500/30 text-lime-500',
+  sky: 'bg-sky-500/30 text-sky-500',
 };
 
 export default colorMap;

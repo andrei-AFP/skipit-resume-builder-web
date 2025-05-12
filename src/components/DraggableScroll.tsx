@@ -54,10 +54,7 @@ export default function DraggableScroll({ children }: PropsWithChildren) {
   }, [handleMouseDown, stopDragging, handleMouseMove]);
 
   return (
-    <div
-      ref={scrollRef}
-      className="overflow-x-auto no-scrollbar cursor-grab select-none"
-    >
+    <div ref={scrollRef} className="overflow-x-auto no-scrollbar cursor-grab select-none">
       <div className="flex min-w-max">{children}</div>
     </div>
   );

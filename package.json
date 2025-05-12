@@ -12,6 +12,7 @@
     "@icons-pack/react-simple-icons": "^12.6.0",
     "@next/font": "^14.2.15",
     "axios": "^1.8.4",
+    "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
     "mobx": "^6.13.7",
     "mobx-react-lite": "^4.1.0",

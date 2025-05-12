@@ -1,5 +1,5 @@
 import { ISkill } from '@/interfaces/ISkill';
-import { IExperience } from './IExperience';
+import { IExperience } from '@/interfaces/IExperience';
 
 export interface IUser {
   id: number;

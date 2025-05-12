@@ -1,7 +1,7 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import api from '@/lib/api';
 import { IUser } from '@/interfaces/IUser';
-import skillStore from './skillStore';
+import skillStore from '@/stores/skillStore';
 
 class UserStore {
   user: IUser | null = null;

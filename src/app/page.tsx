@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import userStore from '@/stores/userStore';
 import Loading from '@/components/Loading';
 import SummarySection from '@/containers/resume-page/SummarySection';
-import ExperiencesSection from '@/containers/resume-page/ExperiencesSection';
+import SkillSection from '@/containers/resume-page/SkillSection';
 
 const UserPage = observer(() => {
   useEffect(() => {
@@ -17,7 +17,7 @@ const UserPage = observer(() => {
   return userStore.user ? (
     <>
       <SummarySection />
-      <ExperiencesSection />
+      <SkillSection />
     </>
   ) : (
     <div className="w-screen h-screen flex justify-center items-center text-9xl">

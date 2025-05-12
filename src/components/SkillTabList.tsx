@@ -3,20 +3,20 @@
 import { observer } from 'mobx-react-lite';
 import { ISkill } from '@/interfaces/ISkill';
 import { useEffect, useMemo, useState } from 'react';
-import SkillButtons from './SkillButtons';
-import DraggableScroll from './DraggableScroll';
+import SkillButtonList from '@/components/SkillButtonList';
+import DraggableScroll from '@/components/DraggableScroll';
 
-interface ISkillsTabsProps {
+interface ISkillTabListProps {
   skills?: ISkill[];
 }
 
-const SkillsTabs = observer((props: ISkillsTabsProps) => {
+const SkillTabList = observer(({ skills }: ISkillTabListProps) => {
   const [activeTab, setActiveTab] = useState('All');
 
   const { groupedSkills, skillTypes } = useMemo(() => {
     let grouped: Record<string, ISkill[]> = {};
-    if (props.skills) {
-      grouped = props.skills.reduce(
+    if (skills) {
+      grouped = skills.reduce(
         (acc, skill) => {
           const typeName = skill.skill_type.name;
           if (!acc[typeName]) acc[typeName] = [skill];
@@ -29,7 +29,7 @@ const SkillsTabs = observer((props: ISkillsTabsProps) => {
 
     const types = ['All', ...Object.keys(grouped)];
     return { groupedSkills: grouped, skillTypes: types };
-  }, [props.skills]);
+  }, [skills]);
 
   useEffect(() => {
     if (!activeTab && skillTypes.length > 0) {
@@ -38,7 +38,7 @@ const SkillsTabs = observer((props: ISkillsTabsProps) => {
   }, [skillTypes, activeTab]);
 
   return (
-    props.skills && (
+    skills && (
       <>
         <div className="flex overflow-x-auto no-scrollbar lg:justify-end">
           <DraggableScroll>
@@ -58,9 +58,9 @@ const SkillsTabs = observer((props: ISkillsTabsProps) => {
         <div className="py-4">
           <ul className="flex flex-wrap gap-2 justify-center lg:justify-end">
             {activeTab && activeTab === 'All' ? (
-              <SkillButtons skills={props.skills} />
+              <SkillButtonList skills={skills} />
             ) : (
-              <SkillButtons skills={groupedSkills[activeTab]} />
+              <SkillButtonList skills={groupedSkills[activeTab]} />
             )}
           </ul>
         </div>
@@ -69,4 +69,4 @@ const SkillsTabs = observer((props: ISkillsTabsProps) => {
   );
 });
 
-export default SkillsTabs;
+export default SkillTabList;

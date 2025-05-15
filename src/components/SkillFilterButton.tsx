@@ -14,7 +14,7 @@ const SkillFilterButton = observer(({ skillType }: SkillFilterButtonProps) => {
   return (
     <button
       onClick={() => skillStore.toggleSkillTypeFilter(skillType.id)}
-      className={`mx-1 px-3 py-1 border cursor-pointer transition duration-300 lg:mx-0 ${
+      className={`px-3 py-1 border cursor-pointer transition duration-300 ${
         isSelected ? 'border-white text-white' : 'border-transparent'
       }`}
     >

@@ -19,7 +19,7 @@ const SkillFilterList = observer(({ showFilteredSkills }: ISkillFilterListProps)
     <>
       <div className="fixed bottom-0 w-full py-4 bg-[#1a1a1a] z-1 flex overflow-x-auto no-scrollbar shadow-[0px_0px_20px_0px_rgba(0,_0,_0,_0.5)] lg:relative lg:justify-end lg:py-0 lg:shadow-none">
         <DraggableScroll>
-          <div className="flex lg:gap-2">
+          <div className="flex px-5 space-x-2 lg:px-0 lg:space-x-0 lg:gap-2">
             {skillStore.skillTypes.map((skillType) => (
               <SkillFilterButton key={skillType.id} skillType={skillType} />
             ))}

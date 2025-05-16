@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     domains: ['skipit.ro', 'localhost'],
     remotePatterns: [
       {
-        protocol: 'http',
+        protocol: 'https',
         hostname: 'skipit.ro',
         port: '',
         pathname: '/storage/**',

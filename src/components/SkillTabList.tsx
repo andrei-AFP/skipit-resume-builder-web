@@ -56,13 +56,13 @@ const SkillTabList = observer(({ skills }: ISkillTabListProps) => {
           </DraggableScroll>
         </div>
         <div className="py-4">
-          <ul className="flex flex-wrap gap-2 justify-center lg:justify-end">
+          <div className="flex flex-wrap gap-2 justify-center lg:justify-end">
             {activeTab && activeTab === 'All' ? (
               <SkillButtonList skills={skills} />
             ) : (
               <SkillButtonList skills={groupedSkills[activeTab]} />
             )}
-          </ul>
+          </div>
         </div>
       </>
     )

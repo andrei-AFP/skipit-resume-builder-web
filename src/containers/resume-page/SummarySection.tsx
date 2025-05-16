@@ -19,9 +19,9 @@ const SummarySection = () => {
           <div className="flex flex-wrap justify-center gap-3 w-full lg:justify-end">
             <SkillFilterList />
             <div className="lg:pt-4">
-              <ul className="flex flex-wrap gap-2 justify-center lg:justify-end">
+              <div className="flex flex-wrap gap-2 justify-center lg:justify-end">
                 <SkillButtonList skills={skills} />
-              </ul>
+              </div>
             </div>
           </div>
         </>

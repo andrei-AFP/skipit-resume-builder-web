@@ -29,9 +29,9 @@ const SkillFilterList = observer(({ showFilteredSkills }: ISkillFilterListProps)
 
       {showFilteredSkills && (
         <div className="py-4">
-          <ul className="flex flex-wrap gap-2 justify-center lg:justify-end">
+          <div className="flex flex-wrap gap-2 justify-center lg:justify-end">
             <SkillButtonList skills={skillsToShow} />
-          </ul>
+          </div>
         </div>
       )}
     </>

@@ -9,11 +9,11 @@ interface IExperienceListProps {
 
 const ExperienceList = ({ experiences }: IExperienceListProps) => {
   return (
-    <>
+    <div className="space-y-6">
       {experiences?.map((experience) => (
         <ExperienceItem key={experience.id} experience={experience} />
       ))}
-    </>
+    </div>
   );
 };
 

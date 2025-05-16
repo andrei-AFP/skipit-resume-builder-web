@@ -15,7 +15,7 @@ const SummarySection = () => {
       {user && <Summary user={user} />}
       {skills.length > 0 && (
         <>
-          <h2 className="text-2xl font-bold my-4">Skills</h2>
+          <h2 className="sticky top-0 bg-[#1a1a1a] z-10 text-2xl font-bold py-4">Skills</h2>
           <div className="flex flex-wrap justify-center gap-3 w-full lg:justify-end">
             <SkillFilterList />
             <div className="lg:pt-4">

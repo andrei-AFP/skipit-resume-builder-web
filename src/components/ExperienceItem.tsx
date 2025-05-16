@@ -20,7 +20,7 @@ const ExperienceItem = ({ experience }: ExperienceItemProps) => {
     : null;
 
   return (
-    <div className="mb-4 lg:ps-8 lg:border-s lg:border-[#f1f1f1]">
+    <div className="lg:ps-8 lg:border-s lg:border-[#f1f1f1]">
       <h3 className="text-lg font-medium">{experience.company}</h3>
       <h4 className="text-md font-medium">{experience.position}</h4>
       <p className="text-sm">

@@ -16,7 +16,7 @@ const Summary = observer(({ user }: ISummaryProps) => {
   return (
     <>
       {user.avatar && (
-        <div className="relative mx-auto mb-4 w-[150px] h-[150px] overflow-hidden rounded-full border-4 border-black bg-[#1a1a1a] shadow-[0px_0px_20px_0px_rgba(0,_0,_0,_0.5)] lg:mx-0">
+        <div className="relative mx-auto mb-4 w-[150px] h-[150px] overflow-hidden rounded-full border-4 border-black bg-[#1a1a1a] shadow-[0px_0px_20px_0px_rgba(0,_0,_0,_0.5)] lg:mx-0 lg:my-4">
           <Image
             src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${user.avatar}`}
             alt={`${user.name}'s avatar`}

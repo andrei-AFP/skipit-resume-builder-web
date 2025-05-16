@@ -20,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} antialiased font-montserrat`}>
-        <div className="px-5 py-10 lg:flex lg:max-w-[1920px] lg:mx-auto lg:p-20">{children}</div>
+        <div className="px-5 pt-10 pb-25 lg:flex lg:max-w-[1920px] lg:mx-auto lg:p-20">
+          {children}
+        </div>
       </body>
     </html>
   );

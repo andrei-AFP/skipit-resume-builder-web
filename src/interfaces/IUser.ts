@@ -1,5 +1,7 @@
 import { ISkill } from '@/interfaces/ISkill';
 import { IExperience } from '@/interfaces/IExperience';
+import { IEducation } from './IEducation';
+import { ILanguage } from './ILanguage';
 
 export interface IUser {
   id: number;
@@ -13,6 +15,8 @@ export interface IUser {
   linkedin_url?: string;
   github_url?: string;
   skills?: ISkill[];
-  experiences?: [IExperience];
+  experiences?: IExperience[];
+  educations?: IEducation[];
+  languages?: ILanguage[];
   skills_by_type?: { string: ISkill[] };
 }

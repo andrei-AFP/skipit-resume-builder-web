@@ -27,10 +27,12 @@ const ExperienceItem = ({ experience }: ExperienceItemProps) => {
         <span className="me-1">{startDate}</span>-<span className="mx-1">{endDate}</span>
         {period && <span> ({period})</span>}
       </p>
-      <p className="text-sm mb-4">{experience.location}</p>
-      <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-        <SkillButtonList skills={experience.skills ?? []} hideIcons />
-      </div>
+      <p className="text-sm">{experience.location}</p>
+      {!!experience.skills && !!experience.skills.length && (
+        <div className="flex flex-wrap gap-3 justify-center mt-4 lg:justify-start">
+          <SkillButtonList skills={experience.skills} hideIcons />
+        </div>
+      )}
     </div>
   );
 };

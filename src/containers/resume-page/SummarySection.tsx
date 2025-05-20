@@ -11,7 +11,7 @@ const SummarySection = () => {
   const { skills } = skillStore;
 
   return (
-    <div className="h-full mb-10 text-center lg:sticky lg:top-20 lg:w-[50%] lg:mb-0 lg:pe-8 lg:flex lg:flex-col lg:items-end lg:text-end">
+    <div className="h-full mb-10 text-center lg:sticky lg:top-10 lg:w-[50%] lg:mb-0 lg:pe-8 lg:flex lg:flex-col lg:items-end lg:text-end">
       {user && <Summary user={user} />}
       {skills.length > 0 && (
         <>

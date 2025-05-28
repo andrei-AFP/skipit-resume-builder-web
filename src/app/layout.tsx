@@ -10,6 +10,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: 'SkipIT - Resume Builder',
+  description: 'SkipIT - Resume Builder',
 };
 
 export default function RootLayout({
